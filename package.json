@@ -1,0 +1,8 @@
+{
+  "name": "portfolio-theme",
+  "private": true,
+  "workspaces": [
+    "demo",
+    "theme"
+  ]
+}
