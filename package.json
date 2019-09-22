@@ -1,8 +1,8 @@
 {
-  "name": "portfolio-theme",
+  "name": "gatsby-theme-portfolio",
   "private": true,
   "workspaces": [
-    "demo",
+    "site",
     "theme"
   ]
 }
