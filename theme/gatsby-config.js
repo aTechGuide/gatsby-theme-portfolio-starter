@@ -1,9 +1,4 @@
-module.exports = ({ trackingId = "UA-11111XXX-1", postsPath = "posts", postsPerPage = "2", mailchimpURL = "", imagesPath = "images"}) => {
-  
-  let showSubscriptionWidget = true
-  if (mailchimpURL === "") {
-    showSubscriptionWidget = false
-  } 
+module.exports = ({ trackingId = "UA-11111XXX-1", projectsPath = "projects", projectPerPage = "2", imagesPath = "images"}) => {
   
   return {
   siteMetadata: {
@@ -25,13 +20,11 @@ module.exports = ({ trackingId = "UA-11111XXX-1", postsPath = "posts", postsPerP
     menuLinks: [{name: 'Tags', link: '/tags/'}], // Array of top Navigation bar items. Make sure you have pages corresponding to the value of `link`
 
     // Footer Customizations
-    footerLinks: [{name: 'About', link: '/about/'}, {name: 'Terms of Use', link: '/terms-of-use/'}, {name: 'Privacy Policy', link: '/privacy-policy/'}],
+    footerLinks: [{name: 'About', link: '/about/'}],
     displayFooterMessage: true,
     comments: 'true', // Enable/Disable comments
     options : {
-      paginate: postsPerPage,
-      showSubscriptionWidget,
-      mailchimpURL
+      paginate: projectPerPage
     }
   },
   plugins: [
@@ -117,7 +110,7 @@ module.exports = ({ trackingId = "UA-11111XXX-1", postsPath = "posts", postsPerP
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: postsPath,
+        path: projectsPath,
       },
     },
     {
@@ -141,7 +134,7 @@ module.exports = ({ trackingId = "UA-11111XXX-1", postsPath = "posts", postsPerP
         extensions: [`.mdx`, `.md`],
         remarkPlugins: [require("remark-attr")],
         defaultLayouts: {
-          [postsPath]: require.resolve("./src/templates/single-post.js")
+          [projectsPath]: require.resolve("./src/templates/single-post.js")
         },
         plugins: [`gatsby-remark-images`], // <- Hack to make this plugin work properly
         gatsbyRemarkPlugins: [

@@ -10,7 +10,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import Footer from '../Footer';
 import Header from "../header"
 import {Provider} from '../Context';
-import theme from '../../theme';
+import theme from '../../styles/theme';
 
 /**
  * This class is Parent to all the components

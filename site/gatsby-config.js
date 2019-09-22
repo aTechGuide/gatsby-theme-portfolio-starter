@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `ATech Guide`,
+    title: `Kamran Ali`,
     description: `Kamran Ali's Tech Blog`,
     author: `Kamran Ali`,
     twitterId: `@aTechGuide`,
@@ -13,8 +13,8 @@ module.exports = {
     ],
     contactSupport: 'https://www.facebook.com/aTechGuide/',
     bingId: '',
-    menuLinks: [{name: 'Tags', link: '/tags/'}],
-    footerLinks: [{name: 'About', link: '/detailed-tech-tutorials/'}, {name: 'Terms of Use', link: '/terms-of-use/'}, {name: 'Privacy Policy', link: '/privacy-policy/'}],
+    menuLinks: [{name: 'Projects', link: '/tags/'}],
+    footerLinks: [{name: 'About', link: '/detailed-tech-tutorials/'}],
     displayFooterMessage: true,
     comments: 'true' // Enable disable comments
   },
@@ -23,10 +23,9 @@ module.exports = {
       resolve: "gatsby-theme-portfolio-starter",
       options: {
         trackingId: "UA-27634418-4",
-        postsPath: "posts",
+        projectsPath: "projects",
         imagesPath: "images",
-        postsPerPage: "12",
-        mailchimpURL: "https://kamranali.us17.list-manage.com/subscribe/post?u=835b966c8e4fb4811d20a1b0c&amp;id=1ccb85525c"
+        projectPerPage: "12"
       },
     },
     {

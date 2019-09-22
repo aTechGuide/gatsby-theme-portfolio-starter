@@ -3,7 +3,6 @@ import {Grid, Button} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {useStaticQuery, graphql} from 'gatsby';
 
-import Subscribe from '../Subscribe';
 import Share from '../Share';
 import FullPost from '../post/FullPost';
 import DisqusComments from '../comments/DisqusComments';
@@ -23,11 +22,6 @@ const useStyles = makeStyles(theme => {
   commentButton: {
     display: 'flex',
     justifyContent: 'center'
-  },
-  sidebar: {
-    [theme.breakpoints.down('sm')]: {
-      paddingTop: '0',
-    }
   }
 })});
 
@@ -42,9 +36,6 @@ const SinglePostLayout = ({frontmatter, children}) => {
         site {
           siteMetadata {
             comments
-            options {
-              showSubscriptionWidget
-            }
           }
         }
       }
@@ -80,17 +71,6 @@ const SinglePostLayout = ({frontmatter, children}) => {
       </Grid> 
       {/* Left Container End */}      
     </Grid>
-
-    <Grid item xs={12} md={3} className={[classes.postGridItem, classes.sidebar].join(" ")} >
-      {/* Right Container Start*/}
-      <Grid container component="aside">
-        {
-          site.siteMetadata.options.showSubscriptionWidget === true ? <Grid item xs={12} > <Subscribe /> </Grid> : null
-        }
-      </Grid>
-      {/* Right Container End*/}
-    </Grid>
-  
   </Grid>
   );
 }

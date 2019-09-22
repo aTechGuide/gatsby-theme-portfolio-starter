@@ -22,7 +22,7 @@ exports.onCreateNode = ({node, actions}) => {
 exports.onPreBootstrap = ({ store, reporter }, options) => {
   const { program } = store.getState()
   const dirs = [
-    path.join(program.directory, "posts"),
+    path.join(program.directory, "projects"),
     path.join(program.directory, "images")
   ]
 
@@ -96,10 +96,9 @@ function createPaginationPages(posts, createPage, templates, postsPerPage) {
   
   const numberOfPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numberOfPages }).forEach((_, index) => {
-    const isFirstPage = index === 0;
     const currentPage = index + 1;
     createPage({
-      path: isFirstPage === true ? `/` : `/page/${currentPage}/`,
+      path: `/page/${currentPage}/`,
       component: templates.postList,
       context: {
         limit: postsPerPage,

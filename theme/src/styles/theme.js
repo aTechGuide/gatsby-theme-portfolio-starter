@@ -1,8 +1,8 @@
-import {deepPurple, red, indigo, yellow, cyan, lightGreen} from '@material-ui/core/colors/';
+import {blueGrey, red, indigo, yellow, cyan, lightGreen} from '@material-ui/core/colors/';
 
 const theme = {
   palette: {
-    primary: deepPurple,
+    primary: blueGrey,
     secondary: red
   },
   typography: {
@@ -10,7 +10,7 @@ const theme = {
     h1 : {
       fontSize: "3rem",
       fontWeight: 500,
-      color: deepPurple[700]
+      color: blueGrey[700]
     }
   },
   button: {
