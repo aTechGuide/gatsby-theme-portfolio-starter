@@ -4,4 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+import React from 'react';
+import BaseLayout from './src/components/layout/baseLayout';
+
+export const wrapPageElement = ({ element }) => {
+  return <BaseLayout>{element}</BaseLayout>;
+};

@@ -4,6 +4,7 @@ module.exports = {
     description: `Kamran Ali's Tech Blog`,
     author: `Kamran Ali`,
     twitterId: `@aTechGuide`,
+    linkedInId: `kamranalinitb`,
     siteUrl: `https://kamranali.netlify.com`,
     genre: 'Technical Tutorials',
     keywords: [`Technology Blog`],
