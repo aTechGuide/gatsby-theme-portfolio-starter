@@ -13,7 +13,7 @@ module.exports = {
     ],
     contactSupport: 'https://www.facebook.com/aTechGuide/',
     bingId: '',
-    menuLinks: [{name: 'Projects', link: '/tags/'}],
+    menuLinks: [{name: 'Projects', link: '/page/1'}, {name: 'Resume', link: 'https://atechguide.github.io/vitae/'}, {name: 'Blog', link: 'http://atech.guide'}],
     footerLinks: [{name: 'About', link: '/detailed-tech-tutorials/'}],
     displayFooterMessage: true,
     comments: 'true' // Enable disable comments
@@ -25,7 +25,7 @@ module.exports = {
         trackingId: "UA-27634418-4",
         projectsPath: "projects",
         imagesPath: "images",
-        projectPerPage: "12"
+        projectsPerPage: "12"
       },
     },
     {

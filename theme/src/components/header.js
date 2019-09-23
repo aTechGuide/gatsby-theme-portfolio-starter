@@ -1,9 +1,11 @@
 import React from "react"
 
 import { makeStyles } from '@material-ui/core/styles';
-import {useStaticQuery, graphql, Link} from 'gatsby';
+import {useStaticQuery, graphql} from 'gatsby';
 import {AppBar, Toolbar, Typography, Button, Tooltip, Slide, useScrollTrigger, useMediaQuery} from '@material-ui/core';
 import { useTheme } from "@material-ui/styles";
+
+import Link from '../util/Link';
 import PopupMenu from "./PopupMenu";
 
 const useStyles = makeStyles(theme => ({
@@ -69,7 +71,7 @@ const Header = () => {
               matches && (
                 menuLinks.map(link => (
                   <Typography key={link.name}>
-                    <Link key={link.name} className={classes.menuLink} activeClassName={classes.activeLink} to={link.link}>{link.name}</Link>
+                    <Link className={classes.menuLink} activeClassName={classes.activeLink} to={link.link}>{link.name}</Link>
                   </Typography>))
                 )
             }

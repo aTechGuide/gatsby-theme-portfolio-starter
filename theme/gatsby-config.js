@@ -1,4 +1,4 @@
-module.exports = ({ trackingId = "UA-11111XXX-1", projectsPath = "projects", projectPerPage = "2", imagesPath = "images"}) => {
+module.exports = ({ trackingId = "UA-11111XXX-1", projectsPath = "projects", projectsPerPage = "2", imagesPath = "images"}) => {
   
   return {
   siteMetadata: {
@@ -24,7 +24,7 @@ module.exports = ({ trackingId = "UA-11111XXX-1", projectsPath = "projects", pro
     displayFooterMessage: true,
     comments: 'true', // Enable/Disable comments
     options : {
-      paginate: projectPerPage
+      paginate: projectsPerPage
     }
   },
   plugins: [

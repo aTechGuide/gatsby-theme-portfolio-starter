@@ -81,28 +81,28 @@ exports.createPages = ({actions, graphql, reporter}, options) => {
       createPagePerTag(tags, createPage, templates);
 
       // Pagination
-      createPaginationPages(posts, createPage, templates, options.postsPerPage);
+      createPaginationPages(posts, createPage, templates, options.projectsPerPage);
 
   })
 }
 
-function createPaginationPages(posts, createPage, templates, postsPerPage) {
+function createPaginationPages(posts, createPage, templates, projectsPerPage) {
   
-  if(postsPerPage === "undefined") {
-    postsPerPage = 2
+  if(projectsPerPage === "undefined") {
+    projectsPerPage = 2
   } else {
-    postsPerPage = parseInt(postsPerPage)
+    projectsPerPage = parseInt(projectsPerPage)
   }
   
-  const numberOfPages = Math.ceil(posts.length / postsPerPage);
+  const numberOfPages = Math.ceil(posts.length / projectsPerPage);
   Array.from({ length: numberOfPages }).forEach((_, index) => {
     const currentPage = index + 1;
     createPage({
       path: `/page/${currentPage}/`,
       component: templates.postList,
       context: {
-        limit: postsPerPage,
-        skip: index * postsPerPage,
+        limit: projectsPerPage,
+        skip: index * projectsPerPage,
         currentPage,
         numberOfPages
       }
