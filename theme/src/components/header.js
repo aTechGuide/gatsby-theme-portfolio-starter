@@ -9,6 +9,9 @@ import Link from '../util/Link';
 import PopupMenu from "./PopupMenu";
 
 const useStyles = makeStyles(theme => ({
+  bar: {
+    background: theme.palette.primary.dark,
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -61,7 +64,7 @@ const Header = () => {
 
   return (
     <Slide appear={false} direction="down" in={!trigger} >
-      <AppBar position="sticky">
+      <AppBar position="sticky" className={classes.bar}>
         <Toolbar component="nav">
           <Typography variant="h4" component='h2' className={classes.title}>          
             <Link className={classes.homeLink} to="/">{title}</Link>

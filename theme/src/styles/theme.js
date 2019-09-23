@@ -1,16 +1,19 @@
-import {blueGrey, red, indigo, yellow, cyan, lightGreen} from '@material-ui/core/colors/';
+import {blueGrey, indigo, yellow, cyan, lightGreen} from '@material-ui/core/colors/';
 
 const theme = {
   palette: {
     primary: blueGrey,
-    secondary: red
+    secondary: cyan
   },
   typography: {
     fontSize: 16,
     h1 : {
       fontSize: "3rem",
       fontWeight: 500,
-      color: blueGrey[700]
+      color: blueGrey[500]
+    },
+    h5 : {
+      color: cyan[900]
     }
   },
   button: {
