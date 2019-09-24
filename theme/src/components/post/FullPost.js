@@ -12,18 +12,6 @@ import Tags from './Tags';
 import postTheme from '../../styles/postTheme';
 import ScrollTop from './ScrollTop';
 
-/**
- dt, .word{color: blue;}
-dd {color: darkblue; padding-left: 40px}
-dt, dd {font-weight: bold}
-
-.heading1, .irabhighlight{color: darkred;}
-.heading2{color: darkmagenta;}
-.exception{color: red; display: inline;}
-.bg-yellow{background-color: yellow;}
-.bg-cyan{background-color: lightcyan;}
-.bg-green{background-color: lightgreen;}
- */
 const useStyles = makeStyles(theme => postTheme(theme));
 
 const FullPost = ({frontmatter, children}) => {

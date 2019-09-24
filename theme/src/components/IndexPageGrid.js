@@ -1,5 +1,5 @@
 import React from 'react';
-import PostSnippet from "../components/post/PostSnippet";
+import ProjectSnippet from "../components/post/projectSnippet";
 import PaginationLinks from '../components/PaginationLinks';
 import { Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,7 +23,7 @@ const IndexPageGrid = ({posts, currentPage, numberOfPages}) => {
         <Grid container justify='center' component="main">
           {posts.map(({node}) => (
             <Grid key={node.id} item className={classes.postGridItem} > 
-              <PostSnippet 
+              <ProjectSnippet 
                 key={node.id}
                 pagetitle={node.frontmatter.pagetitle} 
                 slug={node.frontmatter.slug}

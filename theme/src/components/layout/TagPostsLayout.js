@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
-import PostSnippet from '../post/PostSnippet';
+import ProjectSnippet from '../post/projectSnippet';
 
 import { Grid} from '@material-ui/core';
 
@@ -19,7 +19,7 @@ const TagPostsLayout = ({data, pageContext}) => {
     <Grid container justify='center' >
         {data.allMdx.edges.map(({node}) => (
           <Grid key={node.id} item className={classes.postGridItem}>
-            <PostSnippet 
+            <ProjectSnippet 
               key={node.id} 
               pagetitle={node.frontmatter.pagetitle}
               slug={node.frontmatter.slug}

@@ -4,21 +4,6 @@ const path = require("path");
 const mkdirp = require("mkdirp");
 const _ = require('lodash')
 
-/*
-exports.onCreateNode = ({node, actions}) => {
-  const {createNodeField} = actions
-
-  if(node.internal.type === 'Mdx'){
-    const slugFromTitle = slugify(node.frontmatter.title)
-    createNodeField({
-      node,
-      name: 'slug',
-      value: slugFromTitle,
-    })
-  }
-}
-*/
-
 exports.onPreBootstrap = ({ store, reporter }, options) => {
   const { program } = store.getState()
   const dirs = [
@@ -54,7 +39,6 @@ exports.createPages = ({actions, graphql, reporter}, options) => {
           id
           frontmatter {
             tags
-            slug
             image {
               publicURL
             }
@@ -70,9 +54,6 @@ exports.createPages = ({actions, graphql, reporter}, options) => {
       }
 
       const posts = res.data.allMdx.edges
-
-      // Create Posts Pages
-      createPosts(posts, createPage);
 
       // Create Tags Page
       let tags = createTagsPage(posts, createPage, templates);
@@ -144,22 +125,5 @@ function createTagsPage(posts, createPage, templates) {
     }
   });
   return tags;
-}
-
-/**
- * For each Node (i.e. mark down file) 
- * - We are creating a page having path = slug.
- */
-function createPosts(posts, createPage) {
-  posts.forEach(({ node }) => {
-    createPage({
-      path: `${node.frontmatter.slug}/`,
-      component: node.fileAbsolutePath,
-      context: {
-        tags: node.frontmatter.tags,
-        image: node.frontmatter.image.publicURL
-      }
-    });
-  });
 }
 

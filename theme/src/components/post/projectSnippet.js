@@ -3,7 +3,7 @@ import {graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { makeStyles } from '@material-ui/core/styles';
-import {Typography, Button, CardHeader, Card, CardActionArea,CardActions,CardContent} from '@material-ui/core';
+import {Typography, CardHeader, Card, CardActionArea,CardActions,CardContent} from '@material-ui/core';
 
 import Context from '../Context';
 import Tags from './Tags';
@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PostSnippet = ({pagetitle, body, date, tags, slug, fixed}) => {
+const ProjectSnippet = ({pagetitle, body, date, tags, fixed}) => {
 
   const classes = useStyles();
   const contextData = useContext(Context)
@@ -52,7 +52,7 @@ const PostSnippet = ({pagetitle, body, date, tags, slug, fixed}) => {
  
   return (
     <Card className={classes.card} raised component="article" >
-      <CardActionArea href={"/" + slug}>
+      <CardActionArea>
         <Img fixed={fixed} draggable={false} title={pagetitle} alt={pagetitle} />
       </CardActionArea>
         <CardHeader
@@ -70,9 +70,6 @@ const PostSnippet = ({pagetitle, body, date, tags, slug, fixed}) => {
         <div className={classes.chipRow}>
           <Tags tags={tags}/>
         </div>
-        <Button href={`/${slug}/`} size="small" color="primary" variant='outlined'>
-          Read More
-        </Button>
       </CardActions>
     </Card>
   );
@@ -85,7 +82,6 @@ export const postFrontMatter = graphql`
     summary
     date(formatString: "MMM D, YYYY")
     tags
-    slug
     image {
       childImageSharp {
         fixed(width: 350, height: 280) {
@@ -96,4 +92,4 @@ export const postFrontMatter = graphql`
 }
 `
 
-export default PostSnippet;
+export default ProjectSnippet;
