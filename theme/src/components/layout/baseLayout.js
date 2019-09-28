@@ -18,9 +18,9 @@ const muiTheme = createMuiTheme(theme)
 const BaseLayout = ({ children }) => {
   
   /**
-   * Loding ICON which can be used everywhere
+   * Loding ICON which can be used everywhere.
+   * Contains context things, NO UI Element
    */
-  //const icon = 'icon'
   const icon = useStaticQuery(graphql`
     query {
       file(name: {eq: "icon"}) {

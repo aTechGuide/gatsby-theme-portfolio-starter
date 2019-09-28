@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     <div className={classes.root}>
       <Header />
       {children}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

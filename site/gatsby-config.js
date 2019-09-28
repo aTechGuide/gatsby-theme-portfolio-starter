@@ -6,7 +6,6 @@ module.exports = {
     twitterId: `@aTechGuide`,
     linkedInId: `kamranalinitb`,
     siteUrl: `https://kamranali.netlify.com`,
-    genre: 'Technical Tutorials',
     keywords: [`Technology Blog`],
     email: `admin@atech.guide`,
     social: [
@@ -16,8 +15,7 @@ module.exports = {
     bingId: '',
     menuLinks: [{name: 'Projects', link: '/page/1'}, {name: 'Resume', link: 'https://docs.google.com/document/d/17ANlKXIhwGBoSyMxsALduuWv6itjB1K__esdky08VcI/'}, {name: 'Blog', link: 'http://atech.guide'}],
     footerLinks: [],
-    displayFooterMessage: true,
-    comments: 'true' // Enable disable comments
+    displayFooterMessage: true
   },
   plugins: [
     {
@@ -64,10 +62,10 @@ module.exports = {
         mergeStyleHashes: false, 
         mergeDefaultDirectives: true,
         directives: {
-          "default-src": "'self' disqus.com marketingplatform.google.com/about/analytics/ c.disquscdn.com www.google-analytics.com www.google.com/analytics/",
-          "script-src": "'self' 'unsafe-inline' www.google-analytics.com kamranali.disqus.com", //<- 'unsafe-inline' is unsafe and is required by Disqus
-          "style-src": "'self' 'unsafe-inline' c.disquscdn.com", //<- "'unsafe-inline'" should be avoided but the plugin was broken with mergeStyleHashes
-          "img-src": "'self' data: www.google-analytics.com referrer.disqus.com c.disquscdn.com"
+          "default-src": "'self' marketingplatform.google.com/about/analytics/ www.google-analytics.com www.google.com/analytics/",
+          "script-src": "'self' www.google-analytics.com",
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data: www.google-analytics.com"
         }
       }
     }

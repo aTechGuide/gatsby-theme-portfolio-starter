@@ -20,7 +20,7 @@
 
 A Gatsby theme for creating Portfolio. See the [Live demo](https://gatsby-theme-portfolio-starter.netlify.com/)
 
-## Usage
+## 🚀Getting Started
 ### Install
 Manually add to you site
 
@@ -35,7 +35,7 @@ Manually add to you site
 | `imagesPath`     | `images`         | Location of cover image and icon                                                                                        |
 | `projectsPerPage`| `12`             | Number of Projects to be displayed on a single page |
 
-#### Example usage
+### Example usage
 
 ```js
 // gatsby-config.js
@@ -66,7 +66,6 @@ module.exports = {
     twitterId: `@twitterHandle`,
     linkedInId: `linkedInID`,
     siteUrl: `site domain name`,
-    genre: 'Genre', // Used for Google Structured Data
     keywords: [`Technology Blog`], // Used for SEO and Google Structured Data
     email: `admin@blog.com`, // Contact email Used for Google Structured Data
     social: [
@@ -77,14 +76,13 @@ module.exports = {
     menuLinks: [{name: 'Projects', link: '/page/1'}], // Adding Menu bar links
     footerLinks: [{name: 'Projects', link: '/page/1'}], // Adding footer links
     displayFooterMessage: true, // Enable footer message
-    comments: 'true' // Enable disable comments
   },
 }
 ```
 
-## 🚀Getting Started
+## Folder and Icon Details
 
-- Create `projects` directory and add projects into it as Markdown files
-- Create `images` directory and add images into it to be used by queries directly
-  - Add icon under `images` by the name `icon.png`
-  - Add cover image under `images` by the name `cover.svg` You may download your SVG from [undraw.co](https://undraw.co/) as per theme color
+- Create `projects` directory (name of this directory is as per options) and add projects into it as Markdown files
+- Create `images` directory (name of this directory is as per options) and add images into it to be used by queries directly
+  - Add icon under `images` by the name `icon.png` (name has to be icon)
+  - Add cover image under `images` by the name `cover.svg`(name has to be icon). You may download your SVG from [undraw.co](https://undraw.co/) as per theme color

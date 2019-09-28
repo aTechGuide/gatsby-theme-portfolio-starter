@@ -33,7 +33,6 @@
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
     "react-helmet": "^5.2.1",
-    "react-share": "^3.0.0",
     "reactstrap": "^8.0.1",
     "remark-attr": "^0.8.3",
     "typeface-markazi-text": "0.0.76",

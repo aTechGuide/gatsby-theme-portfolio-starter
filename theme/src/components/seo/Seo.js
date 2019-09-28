@@ -13,12 +13,8 @@ import { useStaticQuery, graphql } from "gatsby"
  * Blog should provide page props + following
  * - image: Pass either fluid Or fixed
  *   - Blogs pass fluid
- * - isBlogPost
- * - date
- * - update_date
  * 
  * Default values
- * - isBlogPost: false
  * - lang: en
  * - meta: []
  */
@@ -27,7 +23,7 @@ import { useStaticQuery, graphql } from "gatsby"
   * Always add Seo to New Page "i.e." an entry page of the App just below <Layout> Component.
   * Do NOT add Seo in other Layouts
   */
-function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, date, update_date, lang, meta }) {
+function Seo({ title, description, tags, image: metaImage, slug, lang, meta }) {
   const { site, file } = useStaticQuery(
     graphql`
       query {
@@ -37,7 +33,6 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
             description
             twitterId
             siteUrl
-            genre
             keywords
             author
             email
@@ -69,8 +64,6 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
   const image = metaImage
             ? `${domain}${metaImage}`
             : null;
-  
-  const type = isBlogPost ? `article` : `website`
 
   const siteSchema = {
     "@context": "http://schema.org/",
@@ -94,39 +87,6 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
       site.siteMetadata.social.join(",")
     ]
   }
-
-  const blogSchema = { 
-    "@context": "http://schema.org", 
-    "@type": "BlogPosting",
-    "headline": pageTitle,
-    "image": image,
-    "editor": site.siteMetadata.author, 
-    "genre": site.siteMetadata.genre, 
-    "keywords": keywords, 
-    "url": url,
-    "datePublished": date,
-    "dateCreated": date,
-    "dateModified": update_date !== date ? update_date : date,
-    "description": metaDescription,
-    "author": {
-       "@type": "Person",
-       "name": site.siteMetadata.author
-     },
-     "publisher": {
-       "@type": "Organization",
-       "name": site.siteMetadata.title,
-       "logo": {
-         "@type": "ImageObject",
-         "url": `${domain}${file.childImageSharp.fixed.src}`
-       }
-     },
-     "mainEntityOfPage": {
-       "@type": "WebPage",
-       "@id": url
-     }
-    }
-
-  const schema = isBlogPost ? blogSchema : siteSchema
 
   return (
     <Helmet
@@ -153,7 +113,7 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
         },
         {
           property: `og:type`,
-          content: type,
+          content: `website`,
         },
         {
           property: `og:title`,
@@ -236,7 +196,7 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
           function addToHomeScreen(){document.querySelector("#a2hs").style.display="none";deferredPrompt.prompt();deferredPrompt.userChoice.then(function(a){deferredPrompt=null})}var deferredPrompt;window.addEventListener("beforeinstallprompt",function(a){a.preventDefault();deferredPrompt=a;a=document.querySelector("#a2hs");a.style.display="block";a.addEventListener("click",addToHomeScreen)});
         `}
       </script>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      <script type="application/ld+json">{JSON.stringify(siteSchema)}</script>
 
       <link rel="canonical" href={url} />
     </Helmet>
@@ -245,7 +205,6 @@ function Seo({ title, description, tags, image: metaImage, isBlogPost, slug, dat
 
 Seo.defaultProps = {
   lang: `en`,
-  isBlogPost: false,
   meta: []
 }
 

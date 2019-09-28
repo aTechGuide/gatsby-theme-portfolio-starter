@@ -15,9 +15,9 @@ const PageLayout = ({children, title}) => {
   return (
     <>
       <Container className={classes.container} >
-        <Typography variant='h1' align='center'>
-            {title}
-        </Typography>
+        {
+          title ? <Typography variant='h1' align='center'> {title} </Typography> : null  
+        }
         {children}
       </Container>
     </>

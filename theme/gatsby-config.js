@@ -6,13 +6,11 @@ module.exports = themeOptions => {
   
   return {
     siteMetadata: {
-      // Final blog https://github.com/hidjou/classsed-gatsby-blog/
       title: `Portfolio Title`,
       description: `Portfolio Description`,
       author: `Author Name`,
       twitterId: `TwitterID`,
       siteUrl: `https://kamranali.in`,
-      genre: 'Genre of blog to be used in Google structured data',
       keywords: [`Keyword 1`, `Keyword 2`],
       email: `admin@domain.info`,
       social: [
@@ -26,7 +24,6 @@ module.exports = themeOptions => {
       // Footer Customizations
       footerLinks: [{name: 'About', link: '/about/'}],
       displayFooterMessage: true,
-      comments: 'true', // Enable/Disable comments
       options : {
         paginate: projectsPerPage
       }
@@ -39,68 +36,6 @@ module.exports = themeOptions => {
         resolve: `gatsby-plugin-google-analytics`,
         options: {
           trackingId: trackingId,
-        },
-      },
-      {
-        resolve: `gatsby-plugin-feed`,
-        options: {
-          query: `
-            {
-              site {
-                siteMetadata {
-                  title
-                  description
-                  author
-                  siteUrl
-                  site_url: siteUrl
-                  email
-                }
-              }
-            }
-          `,
-          feeds: [
-            {
-              serialize: ({ query: { site, allMdx } }) => {
-                return allMdx.edges.map(edge => {
-                  return({
-                    title: edge.node.frontmatter.pagetitle,
-                    description: edge.node.frontmatter.summary,
-                    guid: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
-                    custom_elements: [
-                      { "link": `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}` },
-                      { "category": `[${edge.node.frontmatter.tags.join(",")}]` },
-                      { "pubDate": edge.node.frontmatter.update_date !== edge.node.frontmatter.date ? edge.node.frontmatter.update_date : edge.node.frontmatter.date},
-                      //{ "content:encoded": edge.node.html }
-                    ],
-                  })
-                })
-              },
-              query: `
-                {
-                  allMdx(
-                    sort: { order: DESC, fields: [frontmatter___date] },
-                  ) {
-                    edges {
-                      node {
-                        frontmatter {
-                          pagetitle
-                          summary
-                          date(formatString: "ddd, D MMM YYYY h:mm:ss ZZ")
-                          update_date(formatString: "ddd, D MMM YYYY h:mm:ss ZZ")
-                          tags
-                          slug
-                        }
-                      }
-                    }
-                  }
-                }
-              `,
-              output: "/feed.xml",
-              title: "Blog Title",
-              feed_url: `https://arabicblog.info/feed.xml`,
-              site_url: `https://arabicblog.info/`,
-            },
-          ],
         },
       },
       {
@@ -138,7 +73,7 @@ module.exports = themeOptions => {
           extensions: [`.mdx`, `.md`],
           remarkPlugins: [require("remark-attr")],
           defaultLayouts: {
-            [projectsPath]: require.resolve("./src/templates/single-post.js")
+            //[projectsPath]: require.resolve("./src/templates/single-post.js")
           },
           plugins: [`gatsby-remark-images`], // <- Hack to make this plugin work properly
           gatsbyRemarkPlugins: [

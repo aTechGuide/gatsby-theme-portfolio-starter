@@ -66,7 +66,6 @@ module.exports = {
     twitterId: `@twitterHandle`,
     linkedInId: `linkedInID`,
     siteUrl: `site domain name`,
-    genre: 'Genre', // Used for Google Structured Data
     keywords: [`Technology Blog`], // Used for SEO and Google Structured Data
     email: `admin@blog.com`, // Contact email Used for Google Structured Data
     social: [
@@ -77,7 +76,6 @@ module.exports = {
     menuLinks: [{name: 'Projects', link: '/page/1'}], // Adding Menu bar links
     footerLinks: [{name: 'Projects', link: '/page/1'}], // Adding footer links
     displayFooterMessage: true, // Enable footer message
-    comments: 'true' // Enable disable comments
   },
 }
 ```
