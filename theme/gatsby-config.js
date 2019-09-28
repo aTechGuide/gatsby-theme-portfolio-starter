@@ -20,10 +20,6 @@ module.exports = themeOptions => {
       contactSupport: 'Support URL to be used in Google structured data',
       bingId: 'bingID', // This ID is used as metaTag to verify the ownership of site. If you do NOT have one leave it as '' and we will not include it in meta tag
       menuLinks: [{name: 'Tags', link: '/tags/'}], // Array of top Navigation bar items. Make sure you have pages corresponding to the value of `link`
-
-      // Footer Customizations
-      footerLinks: [{name: 'About', link: '/about/'}],
-      displayFooterMessage: true,
       options : {
         paginate: projectsPerPage
       }

@@ -74,8 +74,6 @@ module.exports = {
     contactSupport: 'https://www.site.com/support/', // Contact link used in site schema for Google Structured Data
     bingId: '', // Support for Bing 
     menuLinks: [{name: 'Projects', link: '/page/1'}], // Adding Menu bar links
-    footerLinks: [{name: 'Projects', link: '/page/1'}], // Adding footer links
-    displayFooterMessage: true, // Enable footer message
   },
 }
 ```

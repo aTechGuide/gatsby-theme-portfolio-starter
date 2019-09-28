@@ -14,8 +14,6 @@ module.exports = {
     contactSupport: 'https://www.facebook.com/aTechGuide/',
     bingId: '',
     menuLinks: [{name: 'Projects', link: '/page/1'}, {name: 'Resume', link: 'https://docs.google.com/document/d/17ANlKXIhwGBoSyMxsALduuWv6itjB1K__esdky08VcI/'}, {name: 'Blog', link: 'http://atech.guide'}],
-    footerLinks: [],
-    displayFooterMessage: true
   },
   plugins: [
     {

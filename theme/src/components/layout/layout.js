@@ -1,7 +1,6 @@
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
 
-import Footer from '../Footer';
 import Header from "../header"
 
 /**
@@ -23,7 +22,6 @@ const Layout = ({ children }) => {
     <div className={classes.root}>
       <Header />
       {children}
-      {/* <Footer/> */}
     </div>
   )
 }
