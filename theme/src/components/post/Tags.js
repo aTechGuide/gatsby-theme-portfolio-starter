@@ -8,6 +8,8 @@ import {slugify} from '../../util/UtilityFunctions';
 const useStyles = makeStyles(theme => ({
   chip: {
     margin: theme.spacing(1),
+    backgroundColor: theme.palette.primary.dark,
+    color: theme.palette.primary.contrastText  
   }
 }));
 
@@ -16,7 +18,7 @@ const Tags = ({tags}) => {
 
   return (
     tags.map(tag => (
-      <Chip key={tag} size='small' color='primary' label={tag} className={classes.chip} 
+      <Chip key={tag} size='small' label={tag} className={classes.chip} 
         clickable onClick={() => navigate(`/tag/${slugify(tag)}/`) } />
       ))
   );

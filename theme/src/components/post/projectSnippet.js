@@ -3,22 +3,14 @@ import {graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { makeStyles } from '@material-ui/core/styles';
-import {Typography, CardHeader, Card, CardActionArea,CardActions,CardContent} from '@material-ui/core';
+import {Typography, CardHeader, Card, CardActions, CardContent, IconButton} from '@material-ui/core';
+import {Link} from '@material-ui/icons';
 
 import Context from '../Context';
 import Tags from './Tags';
 
 const useStyles = makeStyles(theme => ({
-  cardActionBottom: {
-    justifyContent: 'space-between',
-    paddingTop: '0px'
-  },
-  chip: {
-    margin: theme.spacing(1),
-  },
-  chipRow: {
-    display: 'flex',
-  },
+  
   card: {
     width: 350,
     transition: 'all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)',
@@ -26,14 +18,26 @@ const useStyles = makeStyles(theme => ({
       transform: 'scale(1.03, 1.03)'
     }
   },
+  cardActionBottom: {
+    justifyContent: 'space-between',
+    paddingTop: '0px'
+  },
   cardContent: {
     paddingTop: '0px',
-    paddingBottom: '0px',
-    height: '100px',
-  }
+    paddingBottom: '0px'
+  },
+  chipRow: {
+    display: 'flex',
+  },
+  cardHeaderLink: {
+    color: theme.palette.primary.dark,
+    '&:hover': {
+      color: theme.palette.secondary.main
+    }
+  },
 }));
 
-const ProjectSnippet = ({pagetitle, body, date, tags, fixed}) => {
+const ProjectSnippet = ({data: {title, description, date, tags, projectLink}}) => {
 
   const classes = useStyles();
   const contextData = useContext(Context)
@@ -52,17 +56,19 @@ const ProjectSnippet = ({pagetitle, body, date, tags, fixed}) => {
  
   return (
     <Card className={classes.card} raised component="article" >
-      <CardActionArea>
-        <Img fixed={fixed} draggable={false} title={pagetitle} alt={pagetitle} />
-      </CardActionArea>
-        <CardHeader
+      <CardHeader
         avatar={<Img fixed={contextData.icon.file.childImageSharp.fixed} alt={site.siteMetadata.title} />}
-        title={pagetitle}
+        action={
+          <IconButton aria-label="github link" className={classes.cardHeaderLink} href={projectLink} target="_blank" rel="nofollow noopener noreferrer">
+            <Link fontSize="large"/>
+          </IconButton>
+        }
+        title={title}
         subheader={date}
       />
         <CardContent className={classes.cardContent}>    
           <Typography variant="body2" color="textSecondary" component="p">
-            {body}
+            {description}
           </Typography>
         </CardContent>
       
@@ -78,17 +84,11 @@ const ProjectSnippet = ({pagetitle, body, date, tags, fixed}) => {
 // For images we have 4:3 Aspect Ratio
 export const postFrontMatter = graphql`
   fragment PostFrontMatter on MdxFrontmatter {
-    pagetitle
-    summary
+    title
+    description
     date(formatString: "MMM D, YYYY")
     tags
-    image {
-      childImageSharp {
-        fixed(width: 350, height: 280) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
+    projectLink
 }
 `
 

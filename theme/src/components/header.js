@@ -6,7 +6,7 @@ import {useStaticQuery, graphql, navigate} from 'gatsby';
 import {AppBar, Toolbar, Typography, Button, Tooltip, Slide, useScrollTrigger, useMediaQuery, IconButton, SvgIcon} from '@material-ui/core';
 import { useTheme } from "@material-ui/styles";
 
-import Link from '../util/Link';
+import Link from './Link';
 import PopupMenu from "./PopupMenu";
 
 const useStyles = makeStyles(theme => ({
@@ -33,11 +33,9 @@ const useStyles = makeStyles(theme => ({
     }
   },
   activeLink: {
-    background: theme.palette.primary.light,
-    borderRadius: theme.spacing(1),
-    padding: theme.spacing(1),
+    color: theme.palette.secondary.light,
     '&:hover': {
-      color: 'white'
+      color: theme.palette.secondary.light
     }
   }
 }));

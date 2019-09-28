@@ -20,7 +20,7 @@
 
 A Gatsby theme for creating Portfolio. See the [Live demo](https://gatsby-theme-portfolio-starter.netlify.com/)
 
-## 🚀Getting Started
+## Usage
 ### Install
 Manually add to you site
 
@@ -35,7 +35,7 @@ Manually add to you site
 | `imagesPath`     | `images`         | Location of cover image and icon                                                                                        |
 | `projectsPerPage`| `12`             | Number of Projects to be displayed on a single page |
 
-### Example usage
+#### Example usage
 
 ```js
 // gatsby-config.js
@@ -63,6 +63,8 @@ module.exports = {
     title: `My Portfolio Title`,
     description: `My Portfolio Description`,
     author: `Author Name`,
+    headline: `My Introduction`, // One liner Introduction
+    focusArea: `Tech focus Area`, // Technologies currently working on / Knowledge of Tools, expertise etc
     twitterId: `@twitterHandle`,
     linkedInId: `linkedInID`,
     siteUrl: `site domain name`,
@@ -78,9 +80,9 @@ module.exports = {
 }
 ```
 
-## Folder and Icon Details
+## 🚀Getting Started
 
-- Create `projects` directory (name of this directory is as per options) and add projects into it as Markdown files
-- Create `images` directory (name of this directory is as per options) and add images into it to be used by queries directly
-  - Add icon under `images` by the name `icon.png` (name has to be icon)
-  - Add cover image under `images` by the name `cover.svg`(name has to be icon). You may download your SVG from [undraw.co](https://undraw.co/) as per theme color
+- Create `projects` directory and add projects into it as Markdown files
+- Create `images` directory and add images into it to be used by queries directly
+  - Add icon under `images` by the name `icon.png`
+  - Add cover image under `images` by the name `cover.svg` You may download your SVG from [undraw.co](https://undraw.co/) as per theme color

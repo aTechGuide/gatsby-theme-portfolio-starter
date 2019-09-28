@@ -22,7 +22,7 @@ const PaginationLinks = ({currentPage, numberOfPages}) => {
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
-  const previousPage = currentPage - 1 === 1 ? '/' : '/page/' + (currentPage - 1).toString()
+  const previousPage = '/page/' + (currentPage - 1).toString()
 
   const nextPage = '/page/' + (currentPage + 1).toString()
   
@@ -31,14 +31,12 @@ const PaginationLinks = ({currentPage, numberOfPages}) => {
       <Grid item>
         {
           isFirst ? (
-            <Tooltip title="Previous Page">
-              <IconButton href="/" disabled>
+              <IconButton disabled aria-label="back button" >
                 <ArrowBackIos >Back</ ArrowBackIos>
               </IconButton>
-            </Tooltip>
           ) : (
             <Tooltip title="Previous Page">
-              <IconButton href={previousPage} >
+              <IconButton href={previousPage} aria-label="back button">
                 <ArrowBackIos >Back</ ArrowBackIos>
               </IconButton>
             </Tooltip>
@@ -49,11 +47,11 @@ const PaginationLinks = ({currentPage, numberOfPages}) => {
         {Array.from({length: numberOfPages}, (_, i) => 
           currentPage === i + 1 ? (
             <Grid item key={`page-number${i + 1}`} className={classes.postGridItem} >
-              <Link to={`${i === 0 ? '': '/page/' + (i + 1)}/`} activeClassName={classes.activeLink}>{i + 1}</Link>
+              <Link to={`${'/page/' + (i + 1)}/`} activeClassName={classes.activeLink}>{i + 1}</Link>
             </Grid>
           ) : (
             <Grid item key={`page-number${i + 1}`} className={classes.postGridItem}>
-              <Link to={`${i === 0 ? '': '/page/' + (i + 1) }/`}>{i + 1}</Link>
+              <Link to={`${'/page/' + (i + 1) }/`}>{i + 1}</Link>
             </Grid>
           )
         ) }
@@ -61,14 +59,12 @@ const PaginationLinks = ({currentPage, numberOfPages}) => {
       <Grid item>
         {
           isLast ? (
-            <Tooltip title="Next Page">
-              <IconButton href={nextPage} disabled >
-                <ArrowForwardIos />
-              </IconButton >
-            </Tooltip>
+            <IconButton href={nextPage} disabled aria-label="forward button">
+              <ArrowForwardIos />
+            </IconButton >
           ) : (
             <Tooltip title="Next Page">
-              <IconButton href={nextPage} >
+              <IconButton href={nextPage} aria-label="forward button">
                 <ArrowForwardIos />
               </IconButton>
             </Tooltip>

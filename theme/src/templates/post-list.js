@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
-import IndexPageGrid from '../components/IndexPageGrid';
+import ProjectPageGrid from '../components/projectPageGrid';
 import Seo from "../components/seo/Seo"
 
 /**
@@ -23,7 +23,7 @@ const PostList = ({data, pageContext}) => {
         description={`${title} ${currentPage} page.`}
         slug={slug} />
       
-      <IndexPageGrid 
+      <ProjectPageGrid 
         posts={posts}
         currentPage={currentPage}
         numberOfPages={numberOfPages} />

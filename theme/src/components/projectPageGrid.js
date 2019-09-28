@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectSnippet from "../components/post/projectSnippet";
-import PaginationLinks from '../components/PaginationLinks';
+import ProjectSnippet from "./post/projectSnippet";
+import PaginationLinks from './PaginationLinks';
 import { Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const IndexPageGrid = ({posts, currentPage, numberOfPages}) => {
+const ProjectPageGrid = ({posts, currentPage, numberOfPages}) => {
   const classes = useStyles();
   // const theme
 
@@ -25,13 +25,7 @@ const IndexPageGrid = ({posts, currentPage, numberOfPages}) => {
             <Grid key={node.id} item className={classes.postGridItem} > 
               <ProjectSnippet 
                 key={node.id}
-                pagetitle={node.frontmatter.pagetitle} 
-                slug={node.frontmatter.slug}
-                date={node.frontmatter.date}
-                body={node.frontmatter.summary}
-                // fluid={node.frontmatter.image.childImageSharp.fluid}
-                fixed={node.frontmatter.image.childImageSharp.fixed}
-                tags={node.frontmatter.tags} />
+                data={node.frontmatter} />
               </Grid>
           ))}
           
@@ -48,4 +42,4 @@ const IndexPageGrid = ({posts, currentPage, numberOfPages}) => {
   );
 }
 
-export default IndexPageGrid;
+export default ProjectPageGrid;

@@ -39,9 +39,6 @@ exports.createPages = ({actions, graphql, reporter}, options) => {
           id
           frontmatter {
             tags
-            image {
-              publicURL
-            }
           }
         }
       }
