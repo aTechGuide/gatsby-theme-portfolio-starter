@@ -9,7 +9,11 @@ const useStyles = makeStyles(theme => ({
   chip: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.primary.contrastText  
+    color: theme.palette.primary.contrastText,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+      transform: 'scale(1.03, 1.03)'
+    } 
   }
 }));
 

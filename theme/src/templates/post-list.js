@@ -14,7 +14,7 @@ const PostList = ({data, pageContext}) => {
   const posts = data.allMdx.edges
   const title = data.site.siteMetadata.title
   const {currentPage, numberOfPages} = pageContext
-  const slug = currentPage === 1 ? '/' : `/page/${currentPage}`
+  const slug = `page/${currentPage}`
   
   return (
     <Layout>

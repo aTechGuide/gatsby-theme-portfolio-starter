@@ -64,7 +64,7 @@ const Index = () => {
     <Layout>
     <Seo 
       title="Home Page"
-      description="Home Page"
+      // description="Home Page" Description should be picked from configuration for Index Page
       slug="/"  />
 
     <PageLayout>

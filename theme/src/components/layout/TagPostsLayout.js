@@ -20,15 +20,8 @@ const TagPostsLayout = ({data, pageContext}) => {
         {data.allMdx.edges.map(({node}) => (
           <Grid key={node.id} item className={classes.postGridItem}>
             <ProjectSnippet 
-              key={node.id} 
-              pagetitle={node.frontmatter.pagetitle}
-              slug={node.frontmatter.slug}
-              date={node.frontmatter.date}
-              body={node.frontmatter.summary}
-              //fluid={node.frontmatter.image.childImageSharp.fluid}
-              fixed={node.frontmatter.image.childImageSharp.fixed}
-              tags={node.frontmatter.tags}
-              />
+                key={node.id}
+                data={node.frontmatter} />
           </Grid>
         ))}
       </Grid>

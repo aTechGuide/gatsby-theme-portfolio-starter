@@ -15,13 +15,13 @@ module.exports = {
     ],
     contactSupport: 'https://www.facebook.com/aTechGuide/',
     bingId: '',
-    menuLinks: [{name: 'Projects', link: '/page/1'}, {name: 'Resume', link: 'https://docs.google.com/document/d/17ANlKXIhwGBoSyMxsALduuWv6itjB1K__esdky08VcI/'}, {name: 'Blog', link: 'http://atech.guide'}],
+    menuLinks: [{name: 'Projects', link: '/page/1'}],
   },
   plugins: [
     {
       resolve: "gatsby-theme-portfolio-starter",
       options: {
-        trackingId: "UA-27634418-4",
+        trackingId: "UA-12345418-1",
         projectsPath: "projects",
         imagesPath: "images",
         projectsPerPage: "12"
@@ -30,12 +30,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`, //<- Creates manifest file
       options: {
-        name: "ATechGuide",
-        short_name: "ATechGuide",
-        description: "Tech Blog",
+        name: "Kamran Ali Portfolio",
+        short_name: "portfolio",
+        description: "Kamran Ali Portfolio and Projects",
         start_url: "/",
-        background_color: "#673ab7",
-        theme_color: "#673ab7",
+        background_color: "#455a64",
+        theme_color: "#455a64",
         display: "standalone",
         icon: "images/icon.png",
       },
