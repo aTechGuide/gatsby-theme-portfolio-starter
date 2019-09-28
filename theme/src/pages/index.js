@@ -8,12 +8,28 @@ import { Typography } from '@material-ui/core';
 import Layout from '../components/layout/layout';
 
 const useStyles = makeStyles(theme => ({
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
   cover: {
     maxWidth: '100%',
     marginBottom: '50px'
   },
   headline: {
-    marginBottom: '20px'
+    marginBottom: theme.postGridItemPadding * 2,
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "2.5rem",
+    }
+  },
+  focusArea: {
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.postGridItemPadding * 2,
+      fontSize: "1.5rem"
+    }
   },
   link: {
     color: theme.palette.secondary[900],
@@ -27,11 +43,13 @@ const Index = () => {
 
   const classes = useStyles();
 
-  const {site : {siteMetadata: {author, twitterId, linkedInId}}, file: {publicURL}} = useStaticQuery(graphql`
+  const {site : {siteMetadata: {author, headline, focusArea, twitterId, linkedInId}}, file: {publicURL}} = useStaticQuery(graphql`
     query fetchIndexDetails {
       site {
         siteMetadata {
           author
+          headline
+          focusArea
           twitterId
           linkedInId
         }
@@ -50,20 +68,16 @@ const Index = () => {
       slug="/"  />
 
     <PageLayout>
-
-      <img src={publicURL} alt={author} className={classes.cover} />
-      <Typography component='h1' variant='h1' className={classes.headline}>
-        Hi, I'm Kamran Ali, SDE II @Expedia Inc.
-      </Typography>
-      <Typography component='h2' variant='h5'>
-        I'm a Full Stack Developer, Currently focussing on Big Data Technologies
-      </Typography>
-      <Typography variant='body1'>
-        Feel free to reach out at 
-        <a href={`https://twitter.com/${twitterId}`} target="_blank" rel="noopener noreferrer" className={classes.link}> Twitter </a> |
-        <a href={`https://www.linkedin.com/in/${linkedInId}`} target="_blank" rel="noopener noreferrer" className={classes.link}> LinkedIn </a>
-      </Typography>
-      
+      <main className={classes.main}>
+        <img src={publicURL} alt={author} className={classes.cover} />
+        { headline ? <Typography component='h1' variant='h1' className={classes.headline}> {headline} </Typography> : null } 
+        { focusArea ? <Typography component='h2' variant='h5' className={classes.focusArea}> {focusArea} </Typography> : null} 
+        <Typography variant='body1'>
+          Feel free to reach out at 
+          { twitterId ? <a href={`https://twitter.com/${twitterId}`} target="_blank" rel="noopener noreferrer" className={classes.link}> Twitter </a> : null }
+          { linkedInId ? <a href={`https://www.linkedin.com/in/${linkedInId}`} target="_blank" rel="noopener noreferrer" className={classes.link}> | LinkedIn </a>: null}
+        </Typography>
+      </main>
     </PageLayout>
   </Layout>
   );

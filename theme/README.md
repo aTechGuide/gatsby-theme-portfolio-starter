@@ -63,6 +63,8 @@ module.exports = {
     title: `My Portfolio Title`,
     description: `My Portfolio Description`,
     author: `Author Name`,
+    headline: `My Introduction`, // One liner Introduction
+    focusArea: `Tech focus Area`, // Technologies currently working on / Knowledge of Tools, expertise etc
     twitterId: `@twitterHandle`,
     linkedInId: `linkedInID`,
     siteUrl: `site domain name`,

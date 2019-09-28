@@ -1,34 +1,29 @@
-import {blueGrey, indigo, yellow, cyan, lightGreen} from '@material-ui/core/colors/';
+import {blueGrey, cyan} from '@material-ui/core/colors/';
+
+const primary = blueGrey
+const secondary = cyan
 
 const theme = {
   palette: {
-    primary: blueGrey,
-    secondary: cyan
+    primary: primary,
+    secondary: secondary
   },
   typography: {
     fontSize: 16,
     h1 : {
       fontSize: "3rem",
       fontWeight: 500,
-      color: blueGrey[500]
+      color: primary[500]
     },
     h5 : {
-      color: cyan[900]
+      color: secondary[900]
     }
   },
   button: {
     color: "primary",
     variant: "contained"
   },
-  linkTransition: {
-    fade: "true",
-    duration: .5
-  },
-  postGridItemPadding: '16px',
-  headingColor: indigo,
-  highlightOne: yellow,
-  highlightTwo: cyan,
-  highlightThree: lightGreen
+  postGridItemPadding: 16
 }
 
 export default theme

@@ -9,6 +9,8 @@ module.exports = themeOptions => {
       title: `Portfolio Title`,
       description: `Portfolio Description`,
       author: `Author Name`,
+      headline: `My Introduction`, // One liner Introduction
+      focusArea: `Tech focus Area`,
       twitterId: `TwitterID`,
       siteUrl: `https://kamranali.in`,
       keywords: [`Keyword 1`, `Keyword 2`],
