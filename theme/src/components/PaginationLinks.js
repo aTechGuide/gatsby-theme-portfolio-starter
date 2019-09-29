@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => {
     color: 'Red'
   },
   postGridItem: {
-    padding: theme.postGridItemPadding
+    padding: theme.spacing(2)
   }
 })});
 

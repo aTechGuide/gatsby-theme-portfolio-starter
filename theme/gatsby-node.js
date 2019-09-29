@@ -1,4 +1,4 @@
-const {slugify} = require('./src/util/UtilityFunctions')
+const slugify = require('./src/util/UtilityFunctions')
 const fs = require("fs");
 const path = require("path");
 const mkdirp = require("mkdirp");

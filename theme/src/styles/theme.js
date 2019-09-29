@@ -1,7 +1,4 @@
-import {blueGrey, cyan} from '@material-ui/core/colors/';
-
-const primary = blueGrey
-const secondary = cyan
+import {primary, secondary} from './themeColors'; //<- Destructuring the imported object
 
 const theme = {
   palette: {
@@ -22,8 +19,7 @@ const theme = {
   button: {
     color: "primary",
     variant: "contained"
-  },
-  postGridItemPadding: 16
+  }
 }
 
 export default theme

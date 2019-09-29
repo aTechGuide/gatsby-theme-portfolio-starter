@@ -3,7 +3,7 @@ import {navigate} from 'gatsby';
 import {Chip} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import {slugify} from '../../util/UtilityFunctions';
+import slugify from '../../util/UtilityFunctions';
 
 const useStyles = makeStyles(theme => ({
   chip: {

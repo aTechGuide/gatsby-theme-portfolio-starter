@@ -15,7 +15,7 @@ module.exports = {
     ],
     contactSupport: 'https://www.facebook.com/aTechGuide/',
     bingId: '',
-    menuLinks: [{name: 'Projects', link: '/page/1'}],
+    menuLinks: [{name: 'Projects', link: '/page/1'}, {name: 'External', link: 'http://atech.guide'}],
   },
   plugins: [
     {

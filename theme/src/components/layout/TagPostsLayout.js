@@ -7,7 +7,7 @@ import { Grid} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   postGridItem: {
-    padding: theme.postGridItemPadding
+    padding: theme.spacing(2)
   }
 }));
 

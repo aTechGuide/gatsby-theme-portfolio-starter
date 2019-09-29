@@ -5,11 +5,11 @@ import { Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 /**
- * This Grid is Used in Index page (index.js) + Paginated Pages (post-list.js)
+ * This Grid is Used in Paginated Pages (post-list.js)
  */
 const useStyles = makeStyles(theme => ({
   postGridItem: {
-    padding: theme.postGridItemPadding
+    padding: theme.spacing(2)
   }
 }));
 

@@ -1,8 +1,9 @@
 import React from 'react';
-import {navigate} from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import {IconButton, Menu, MenuItem} from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+import Link from './Link';
 
 const useStyles = makeStyles(theme => ({
   menuToggleButton: {
@@ -21,11 +22,6 @@ const PopupMenu = ({menuLinks}) => {
 
   function handleClose() {
     setAnchorEl(null);
-  }
-
-  function handleMenuItemClick(link) {
-    setAnchorEl(null);
-    navigate(link.link)
   }
 
   return (
@@ -51,7 +47,9 @@ const PopupMenu = ({menuLinks}) => {
       >
       {
           menuLinks.map(link => (
-            <MenuItem key={link.name} onClick={() => handleMenuItemClick(link) }> {link.name} </MenuItem>
+            <MenuItem key={link.name} onClick={() => handleClose() }> 
+              <Link to={link.link}>{link.name}</Link>
+            </MenuItem>
           ))
       }
       </Menu>

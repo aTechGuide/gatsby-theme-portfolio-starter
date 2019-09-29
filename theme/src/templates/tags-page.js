@@ -3,7 +3,7 @@ import {Chip, Badge} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
 
-import {slugify} from '../util/UtilityFunctions';
+import slugify from '../util/UtilityFunctions';
 import PageLayout from '../components/layout/PageLayout';
 import Layout from '../components/layout/layout';
 import Seo from "../components/seo/Seo"

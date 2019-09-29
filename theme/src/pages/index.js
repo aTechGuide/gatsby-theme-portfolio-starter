@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '50px'
   },
   headline: {
-    marginBottom: theme.postGridItemPadding * 2,
+    marginBottom: theme.spacing(4),
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       fontSize: "2.5rem",
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   focusArea: {
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.postGridItemPadding * 2,
+      marginBottom: theme.spacing(4),
       fontSize: "1.5rem"
     }
   },
