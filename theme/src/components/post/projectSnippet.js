@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   chipRow: {
     display: 'flex',
+    flexWrap: 'wrap'
   },
   cardHeaderLink: {
     color: theme.palette.primary.dark,
