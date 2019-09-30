@@ -27,7 +27,7 @@ A Gatsby theme for creating Superfast, SEO optimized Portfolio powered by `Mater
 
 <p align="center">
   <a href="http://atech.guide">
-    <img alt="Gatsby Theme" src="https://gatsby-theme-blog-portfolio.netlify.com/desktop-100.png" />
+    <img alt="Gatsby Theme" src="https://gatsby-theme-portfolio-starter.netlify.com/desktop-100.png" />
   </a>
 </p>
 
@@ -35,7 +35,7 @@ A Gatsby theme for creating Superfast, SEO optimized Portfolio powered by `Mater
 
 <p align="center">
   <a href="http://atech.guide">
-    <img alt="Gatsby Theme" src="https://gatsby-theme-blog-portfolio.netlify.com/mobile-100.png" />
+    <img alt="Gatsby Theme" src="https://gatsby-theme-portfolio-starter.netlify.com/mobile-100.png" />
   </a>
 </p>
 
