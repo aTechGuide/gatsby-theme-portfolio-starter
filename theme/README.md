@@ -22,6 +22,21 @@ A Gatsby theme for creating Superfast, SEO optimized Portfolio powered by `Mater
 - [Live demo](https://gatsby-theme-portfolio-starter.netlify.com/)
 - [My Portfolio Site](https://kamranali.in/)
 
+## Performance
+
+
+## ✨Features
+
+It provides following functionality out of box
+
+- Fully optimized for Lighthouse audit
+- Responsive
+- Pagination for projects
+- Tags for browsing the projects
+- Google Structured Data
+- Google Analytics
+- Sitemap
+
 ## Usage
 ### Install
 Manually add to you site
