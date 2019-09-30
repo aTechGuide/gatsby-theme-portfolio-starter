@@ -1,4 +1,4 @@
-import themeOriginal from 'gatsby-theme-portfolio-starter/src/theme';
+import themeOriginal from 'gatsby-theme-portfolio-starter/src/styles';
 
 const theme = {
   ...themeOriginal

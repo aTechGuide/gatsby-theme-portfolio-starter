@@ -23,6 +23,21 @@ A Gatsby theme for creating Superfast, SEO optimized Portfolio powered by `Mater
 - [My Portfolio Site](https://kamranali.in/)
 
 ## Performance
+### Desktop
+
+<p align="center">
+  <a href="http://atech.guide">
+    <img alt="Gatsby Theme" src="https://gatsby-theme-blog-portfolio.netlify.com/desktop-100.png" />
+  </a>
+</p>
+
+### Mobile
+
+<p align="center">
+  <a href="http://atech.guide">
+    <img alt="Gatsby Theme" src="https://gatsby-theme-blog-portfolio.netlify.com/mobile-100.png" />
+  </a>
+</p>
 
 
 ## ✨Features
@@ -103,3 +118,66 @@ module.exports = {
 - Create `images` directory and add images into it to be used by queries directly
   - Add icon under `images` by the name `icon.png`
   - Add cover image under `images` by the name `cover.svg` You may download your SVG from [undraw.co](https://undraw.co/) as per theme color
+
+## Shadowing
+Please read the guide [Shadowing in Gatsby Themes](https://www.gatsbyjs.org/docs/themes/shadowing/) to understand how to customize the theme. Basically you should place your files into src/gatsby-theme-portfolio-starter/ to shadow/override files.
+
+### Editing the theme
+- Shadow `src/styles/themeColors.js` to override the primary, secondary colors
+
+**themeColors.js**
+```
+import {blueGrey, cyan} from '@material-ui/core/colors/';
+
+const primary = blueGrey
+const secondary = cyan
+
+export {primary, secondary} //<- Exporting an object
+```
+
+- Shadow `src/styles/theme.js` to override rest of the defaults
+
+**theme.js**
+```
+import {primary, secondary} from './themeColors'; //<- Destructuring the imported object
+
+const theme = {
+  palette: {
+    primary: primary,
+    secondary: secondary
+  },
+  typography: {
+    fontSize: 16,
+    h1 : {
+      fontSize: "3rem",
+      fontWeight: 500,
+      color: primary[500]
+    },
+    h5 : {
+      color: secondary[900]
+    }
+  },
+  button: {
+    color: "primary",
+    variant: "contained"
+  }
+}
+
+export default theme
+```
+
+### Projects
+Project cards are created from MDX. Its content is picked from the frontmatter as follows
+
+```
+---
+dataType: project // <- This is added to filter markdown files for projects
+title: Project Title
+description: Project Description
+date: '2019-05-28'
+tags:
+  - Node // Tech stack
+projectLink: https://github.com/aTechGuide/
+published: true
+---
+```

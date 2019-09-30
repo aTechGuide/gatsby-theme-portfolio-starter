@@ -19,7 +19,7 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
   })
 }
 
-exports.createPages = ({actions, graphql, reporter}, options) => {
+exports.createPages = async ({actions, graphql, reporter}, options) => {
   const {createPage} = actions;
 
   const templates = {
@@ -28,40 +28,35 @@ exports.createPages = ({actions, graphql, reporter}, options) => {
     postList: require.resolve('./src/templates/post-list.js'),
   }
 
-  return graphql(`
-  {
-    allMdx(
-      filter: {frontmatter: {published: {eq: true}}}
-    ) {
-      edges {
-        node {
-          fileAbsolutePath
-          id
-          frontmatter {
-            tags
+  const res = await graphql(`
+    {
+      allMdx(filter: {frontmatter: {published: {eq: true}, dataType: {eq: "project"}}}) {
+        edges {
+          node {
+            frontmatter {
+              tags
+            }
           }
         }
       }
     }
+  `)
+  
+  if(res.errors) {
+    reporter.panic('Error loading Mdx Files', res.errors)
+    return Promise.reject(res.errors)
   }
-  `).then(res => {
-      if(res.errors) {
-        reporter.panic('Error loading Mdx Files', res.errors)
-        return Promise.reject(res.errors)
-      }
 
-      const posts = res.data.allMdx.edges
+  const posts = res.data.allMdx.edges
 
-      // Create Tags Page
-      let tags = createTagsPage(posts, createPage, templates);
+  // Create Tags Page
+  let tags = createTagsPage(posts, createPage, templates);
 
-      // Create Tag Posts Pages
-      createPagePerTag(tags, createPage, templates);
+  // Create Tag Posts Pages
+  createPagePerTag(tags, createPage, templates);
 
-      // Pagination
-      createPaginationPages(posts, createPage, templates, options.projectsPerPage);
-
-  })
+  // Pagination
+  createPaginationPages(posts, createPage, templates, options.projectsPerPage);
 }
 
 function createPaginationPages(posts, createPage, templates, projectsPerPage) {
