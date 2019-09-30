@@ -63,7 +63,7 @@ module.exports = {
         mergeDefaultDirectives: true,
         directives: {
           "default-src": "'self' marketingplatform.google.com/about/analytics/ www.google-analytics.com www.google.com/analytics/",
-          "script-src": "'self' www.google-analytics.com",
+          "script-src": "'self' www.google-analytics.com 'unsafe-inline'",
           "style-src": "'self' 'unsafe-inline'",
           "img-src": "'self' data: www.google-analytics.com"
         }

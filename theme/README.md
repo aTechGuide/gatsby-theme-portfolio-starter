@@ -18,7 +18,9 @@
     </a>
 </p>
 
-A Gatsby theme for creating Portfolio. See the [Live demo](https://gatsby-theme-portfolio-starter.netlify.com/)
+A Gatsby theme for creating Superfast, SEO optimized Portfolio powered by `Material UI` and `MDX`
+- [Live demo](https://gatsby-theme-portfolio-starter.netlify.com/)
+- [My Portfolio Site](https://kamranali.in/)
 
 ## Usage
 ### Install
