@@ -1,7 +1,7 @@
 {
   "name": "gatsby-theme-portfolio-starter",
   "description": "Gatsby theme for Portfolio powered by MDX and Material UI",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Kamran Ali <kamranalinitb@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.3.2",
@@ -39,15 +39,15 @@
     "typeface-roboto": "0.0.54"
   },
   "devDependencies": {
-    "gatsby": "^2.13.77",
-    "prettier": "^1.18.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "gatsby": "^2.24.73",
+    "prettier": "^2.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.13.77",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "gatsby": "^2.24.73",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "keywords": [
     "gatsby",
